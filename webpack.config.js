@@ -71,7 +71,7 @@ module.exports = {
             port: 3001
         }
     },
-    devtool: isDev ? 'source-map' : '',
+    devtool: isDev ? 'source-map' : false,
     plugins: [
         new HTMLWebpackPlugin({
             template: './src/public/index.html',

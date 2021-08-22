@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "homepage": "https://lapiduzzz.github.io/Social-Network/",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack serve --mode development --open",
-    "serve": "nodemon server.js"
+    "serve": "nodemon server.js",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +29,7 @@
     "csv-loader": "^3.0.3",
     "express": "^4.17.1",
     "file-loader": "^6.2.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.6.0",
     "node-sass": "^5.0.0",

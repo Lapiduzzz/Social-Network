@@ -7,7 +7,7 @@ import {
     usersProfileThunkCreator
 } from "../../../redux/profileReducer";
 import Profile from "./profile";
-import {Navigate} from 'react-router-dom'
+import {Redirect, withRouter} from 'react-router-dom'
 import withAuthRedirect from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import {getStatus, getUserProfile} from "../../../redux/profileSelectors";
@@ -21,7 +21,7 @@ class ProfileContainer extends React.Component {
         if (!userId) {
             userId = this.props.authorizedUserId
             if (!userId){
-                return <Navigate to={'/login'}/>
+                return <Redirect to={'/login'}/>
             }
         }
         this.props.setUserProfile(userId)
@@ -34,7 +34,7 @@ class ProfileContainer extends React.Component {
             if (!userId) {
                 userId = this.props.authorizedUserId
                 if (!userId) {
-                    return <Navigate to={'/login'}/>
+                    return <Redirect to={'/login'}/>
                 }
             }
             this.props.setUserProfile(userId)
@@ -95,4 +95,5 @@ export default profileContainer;
 
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),
+    withRouter,
     withAuthRedirect)(ProfileContainer)

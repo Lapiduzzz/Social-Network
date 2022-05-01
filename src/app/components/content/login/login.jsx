@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {useFormik} from "formik";
 import * as Yup from 'yup'
 import s from "./login.module.sass"
-import {Navigate} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 
 
 const Login = (props) => {
@@ -26,7 +26,7 @@ const Login = (props) => {
     })
 
     if(props.isAuth) {
-        return <Navigate to={'/profile'}/>
+        return <Redirect to={'/profile'}/>
     }
 
     return (
